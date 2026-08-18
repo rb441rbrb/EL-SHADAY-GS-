@@ -3,46 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EL SHADAY GÁS - Entrega em Minutos</title>
+  <title>EL SHADAY GÁS - Seu Gás Chega em Minutos!</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-    body { background: #0a0a0a; color: white; text-align: center; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+    body { background: #0a0a0a; color: white; }
     
-    .top-bar { background: #00a000; padding: 10px; display: flex; justify-content: center; gap: 10px; align-items: center; font-weight: bold; }
-    .ao-vivo { background: #003300; padding: 5px 12px; border-radius: 20px; color: #00ff00; }
+    .top-bar { background: #00a000; padding: 12px 10px; display: flex; justify-content: center; gap: 8px; align-items: center; font-weight: bold; font-size: 13px; }
+    .ao-vivo { background: #002200; padding: 6px 14px; border-radius: 20px; color: #00ff00; display: flex; gap: 5px; align-items: center; }
     
-    header { padding: 30px 20px; }
-    .logo { display: flex; align-items: center; justify-content: center; gap: 10px; }
-    .logo-icon { background: #ff5500; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 30px; }
-    .logo-text h1 { font-size: 28px; }
-    .logo-text p { color: #00a000; font-weight: bold; }
+    header { padding: 30px 20px 10px; text-align: center; }
+    .logo { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 10px; }
+    .logo-icon { background: #ff5500; width: 55px; height: 55px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 0 15px #ff550055; }
+    .logo-text h1 { font-size: 28px; letter-spacing: 1px; }
+    .logo-text p { color: #00a000; font-weight: bold; font-size: 14px; }
     
-    .status { color: #00ff00; margin: 10px 0; }
+    .status { color: #00ff00; font-size: 14px; margin: 5px 0; }
+    .local { color: #aaa; font-size: 14px; }
     
-    .titulo { font-size: 26px; padding: 0 20px; margin: 20px 0; }
+    .titulo { font-size: 28px; text-align: center; padding: 0 20px; margin: 25px 0 15px; font-weight: 800; }
     .titulo span { color: #ff5500; }
     
-    .descricao { color: #aaa; padding: 0 20px; margin-bottom: 30px; }
+    .descricao { color: #bbb; text-align: center; padding: 0 25px; margin-bottom: 25px; line-height: 1.5; }
     
-    .btn { display: block; background: #00a000; color: white; padding: 18px; margin: 12px 20px; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 16px; }
+    .btn { display: flex; align-items: center; justify-content: center; gap: 10px; background: #00a000; color: white; padding: 18px; margin: 12px 20px; border-radius: 14px; text-decoration: none; font-weight: bold; font-size: 16px; box-shadow: 0 4px 10px #00a00033; }
     .btn.whatsapp { background: #25D366; }
-    .btn.outline { background: transparent; border: 2px solid #555; }
+    .btn.insta { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
+    .btn.outline { background: transparent; border: 2px solid #444; box-shadow: none; }
     
-    .cards { display: flex; gap: 10px; padding: 20px; }
-    .card { background: #1a1a1a; padding: 15px; border-radius: 12px; flex: 1; }
-    .card.green { background: #00a000; }
+    .cards { display: flex; gap: 12px; padding: 20px; }
+    .card { background: #1a1a1a; padding: 18px; border-radius: 14px; flex: 1; text-align: left; }
+    .card.green { background: #00a000; color: white; }
+    .card h3 { margin-bottom: 8px; font-size: 15px; display: flex; gap: 8px; align-items: center; }
+    .card p { font-size: 13px; opacity: 0.9; }
     
-    .porque { background: #111; margin: 20px; padding: 20px; border-radius: 12px; border: 1px solid #00a000; text-align: left; }
-    .item { display: flex; gap: 10px; margin: 15px 0; align-items: flex-start; }
-    .check { background: #00a000; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .porque { background: #111; margin: 20px; padding: 22px; border-radius: 14px; border: 1px solid #00a00044; }
+    .porque h2 { margin-bottom: 15px; font-size: 20px; border-left: 4px solid #00a000; padding-left: 10px; }
+    .item { display: flex; gap: 12px; margin: 16px 0; align-items: flex-start; }
+    .check { background: #00a000; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; }
+    .item p { font-size: 14px; color: #bbb; }
     
-    .selo { background: #1a1a1a; margin: 20px; padding: 15px; border-radius: 12px; display: flex; gap: 10px; align-items: center; }
+    .selo { background: #1a1a1a; margin: 20px; padding: 16px; border-radius: 14px; display: flex; gap: 12px; align-items: center; font-size: 14px; }
+    .selo span { font-size: 24px; }
+    
+    .stats { display: flex; justify-content: space-around; background: #111; margin: 20px; padding: 15px; border-radius: 20px; border: 1px solid #333; }
+    .stats div { text-align: center; }
+    .stats b { color: #00ff00; font-size: 16px; }
   </style>
 </head>
 <body>
 
   <div class="top-bar">
     <span class="ao-vivo">🕐 AO VIVO</span>
-    <span>Aberto agora: Seg a Sáb 07:00 às 18:00 | Dom 07:00 às 14:00</span>
+    <span>Aberto agora: Seg a Sáb 07:00 às 18:00</span>
   </div>
+
+  <header>
+    <div class="logo">
+      <div class="logo-icon">💧</div>
+      <div class="logo-text">
+        <h1>EL SHADAY</h1>
+        <p>GÁS <span style="color: #ff5500;">—</span> COPAGAZ</p>
+      </div>
+    </div>
+    <p class="status">● Aberto agora • Entregando em minutos</p>
+    <p class="local">● Campina Grande/PB</p>
+  </header>
+
+  <h2 class="titulo">El Shaday Gás - Seu Gás Chega <span>em Minutos!</span></h2>
+  <p class="descricao">Revenda Autorizada Copagaz. Entrega rápida em Campina Grande e região. Qualidade e peso garantido.</p>
+
+  <a class="btn" href="tel:82996647786">📦 DISK GÁS - 82 99664-7786</a>
+  <a class="btn" href="tel:82988217147">🚛 SEJA UM REVENDEDOR VOCÊ TAMBÉM - 82 98821-7147</a>
+  <a class="btn whatsapp" href="https://wa.me/5582996647786">💬 Pedir no WhatsApp (82) 99664-7786</a>
+  <a class="btn insta" href="https://www.instagram.com/elshadaygasal?igsh=dWUxaDMxaXg3eWsw">📸 Seguir no Instagram</a>
+  <a class="btn outline" href="tel:82996647786">📞 Ligar Agora</a>
+
+  <div class="cards">
+    <div class="card green">
+      <h3>🕐 Horário de Atendimento</h3>
+      <p>Seg a Sáb 07:00 às 18:00<br>Dom 07:00 às 14:00</p>
+    </div>
+    <div class="card">
+      <h3>💬 Atendimento 24h</h3>
+      <p>WhatsApp sempre pronto p/ você</p>
+    </div>
+  </div>
+
+  <div class="porque">
+    <h2>Por que escolher a EL SHADAY?</h2>
+    <div class="item"><div class="check">✓</div><div><b>Entrega Rápida</b><p>Média de 25 minutos em Campina Grande</p></div></div>
+    <div class="item"><div class="check">✓</div><div><b>Preço Justo</b><p>Melhor custo-benefício da região</p></div></div>
+    <div class="item"><div class="check">✓</div><div><b>Atendimento 24h</b><p>No WhatsApp para emergências</p></div></div>
+    <div class="item"><div class="check">✓</div><div><b>Segurança Garantida</b><p>Botijões revisados e lacrados Copagaz</p></div></div>
+  </div>
+
+  <div class="stats">
+    <div><div>⭐</div><b>+1.200 famílias</b><p>atendidas em CG</p></div>
+    <div><b>Nota 5.0</b><p>no WhatsApp</p></div>
+  </div>
+
+  <div class="selo">
+    <span>🛡️</span>
+    <p><b>Revenda autorizada Copagaz.</b> Todo botijão sai com nota, lacre inviolável e peso conferido na sua frente.</p>
+  </div>
+
+</body>
+</html>
 
