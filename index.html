@@ -9,7 +9,43 @@
     body { background: #0a0a0a; color: white; }
     
     .top-bar { background: #00a000; padding: 12px 10px; display: flex; justify-content: center; gap: 8px; align-items: center; font-weight: bold; font-size: 13px; }
-    .ao-vivo { background: #002200; padding: 6px 14px; border-radius: 20px; color: #00ff00; display: flex; gap: 5px; align-items: center; }
+    
+    /* EFEITO PISCANDO */
+    .ao-vivo { 
+      background: #002200; 
+      padding: 6px 14px; 
+      border-radius: 20px; 
+      color: #00ff00; 
+      display: flex; 
+      gap: 5px; 
+      align-items: center;
+      animation: piscar 1s infinite;
+      box-shadow: 0 0 10px #00ff00;
+    }
+    @keyframes piscar {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.95); }
+    }
+    
+    /* BOTÃO PISCANDO */
+    .btn-piscar {
+      animation: piscar-btn 1.5s infinite;
+      box-shadow: 0 0 20px #25D366;
+      position: relative;
+    }
+    .btn-piscar::after {
+      content: '';
+      position: absolute;
+      top: -3px; right: -3px;
+      width: 12px; height: 12px;
+      background: red;
+      border-radius: 50%;
+      border: 2px solid #0a0a0a;
+    }
+    @keyframes piscar-btn {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
     
     header { padding: 30px 20px 10px; text-align: center; }
     .logo { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 10px; }
@@ -25,7 +61,8 @@
     
     .descricao { color: #bbb; text-align: center; padding: 0 25px; margin-bottom: 25px; line-height: 1.5; }
     
-    .btn { display: flex; align-items: center; justify-content: center; gap: 10px; background: #00a000; color: white; padding: 18px; margin: 12px 20px; border-radius: 14px; text-decoration: none; font-weight: bold; font-size: 16px; box-shadow: 0 4px 10px #00a00033; }
+    .btn { display: flex; align-items: center; justify-content: center; gap: 10px; background: #00a000; color: white; padding: 18px; margin: 12px 20px; border-radius: 14px; text-decoration: none; font-weight: bold; font-size: 16px; box-shadow: 0 4px 10px #00a00033; transition: 0.2s; }
+    .btn:hover { transform: scale(1.02); }
     .btn.whatsapp { background: #25D366; }
     .btn.insta { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
     .btn.outline { background: transparent; border: 2px solid #444; box-shadow: none; }
@@ -74,8 +111,8 @@
 
   <a class="btn" href="tel:82996647786">📦 DISK GÁS - 82 99664-7786</a>
   <a class="btn" href="tel:82988217147">🚛 SEJA UM REVENDEDOR VOCÊ TAMBÉM - 82 98821-7147</a>
-  <a class="btn whatsapp" href="https://wa.me/5582996647786">💬 Pedir no WhatsApp (82) 99664-7786</a>
-  <a class="btn insta" href="https://www.instagram.com/elshadaygasal?igsh=dWUxaDMxaXg3eWsw">📸 Seguir no Instagram</a>
+  <a class="btn whatsapp btn-piscar" href="https://wa.me/5582996647786">💬 Pedir no WhatsApp (82) 99664-7786</a>
+  <a class="btn insta" href="https://www.instagram.com/elshadaygasal?igsh=dWUxaDMxaXg3eWsw">📸 @elshadaygasal</a>
   <a class="btn outline" href="tel:82996647786">📞 Ligar Agora</a>
 
   <div class="cards">
