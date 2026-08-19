@@ -7,15 +7,17 @@
   <style>
     body { background:#000; color:white; font-family: Arial; text-align:center; margin:0; padding:0; }
     .verde { background:#00A859; padding:10px; font-weight:bold; font-size:14px; }
+    .titulo { font-size:42px; font-weight:bold; margin:15px 0 5px 0; } /* AUMENTEI O NOME */
     .btn { background:#00A859; color:white; padding:14px; margin:8px auto; border:none; border-radius:10px; font-size:16px; font-weight:bold; width:90%; max-width:400px; display:block; cursor:pointer; text-decoration:none; }
     .btn-laranja { background:#FF6B00; color:white; padding:12px 24px; border:none; border-radius:10px; font-size:15px; font-weight:bold; cursor:pointer; margin:10px; }
+    .btn-insta { background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:white; padding:14px; margin:8px auto; border:none; border-radius:10px; font-size:16px; font-weight:bold; width:90%; max-width:400px; display:block; cursor:pointer; text-decoration:none; }
   </style>
 </head>
 <body>
 
-  <div class="verde">🟢 AO VIVO - Aberto agora: Seg a Sáb 07:00 às 18:00</div>
+  <div class="verde">🟢 ONLINE - Aberto agora: Seg a Sáb 07:00 às 18:00</div>
 
-  <h1 style="margin:15px 0 5px 0;">EL SHADAY</h1>
+  <h1 class="titulo">EL SHADAY</h1> <!-- NOME MAIOR -->
   <p style="color:#00FF00; margin:0; font-size:18px; font-weight:bold;">GÁS - COPAGAZ</p>
   <p style="color:#00FF00; margin:5px 0;">● Aberto agora ● Entregando em minutos</p>
   <p style="margin:5px 0;">● Maceió/AL</p>
@@ -27,16 +29,13 @@
   <h3 style="color:#FF6B00; margin-bottom:5px;">Oi! Eu sou o Botijão da EL SHADAY 👋</h3>
   <img src="mascote-copagaz.png" alt="Mascote EL SHADAY" style="width:200px; margin:10px auto; display:block;">
 
-  <!-- MÚSICA TOCANDO AUTOMÁTICO -->
-  <audio id="jingle" src="jingle- El SHADAY GÁS.mp3" autoplay loop></audio>
+  <!-- MÚSICA COM BOTÃO PRA TOCAR -->
+  <audio id="jingle" src="jingle- El SHADAY GÁS.mp3" loop></audio>
   <div style="margin:15px 0;">
-    <p style="color:#FF6B00; font-weight:bold;">🎵 Tocando nosso jingle de Maceió/AL 🎵</p>
-    <button onclick="document.getElementById('jingle').pause()" class="btn-laranja">🔇 Pausar Música</button>
+    <p style="color:#FF6B00; font-weight:bold;">🎵 Jingle EL SHADAY Maceió/AL 🎵</p>
+    <button onclick="tocarMusica()" id="btnMusica" class="btn-laranja">▶️ Tocar Música</button>
   </div>
 
   <a href="tel:82996647786" class="btn">📦 DISK GÁS - 82 99664-7786</a>
   <a href="https://wa.me/5582988217147" class="btn">🚚 SEJA UM REVENDEDOR - 82 98821-7147</a>
-  <a href="https://wa.me/5582996647786" class="btn">💬 Pedir no WhatsApp</a>
-
-</body>
-</html>
+  <a href="https://wa.me/5582996647786" class="btn">💬 Pedir no WhatsApp</a
