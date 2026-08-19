@@ -7,7 +7,6 @@
   <style>
     body { background:#000; color:white; font-family: Arial; text-align:center; margin:0; padding:0; }
     
-    /* EFEITO PISCAR DEVAGAR */
     .verde { 
       background:#00A859; 
       padding:12px; 
@@ -25,7 +24,21 @@
     .titulo { font-size:48px; font-weight:bold; margin:20px 0 5px 0; letter-spacing:2px; }
     .btn { background:#00A859; color:white; padding:15px; margin:10px auto; border:none; border-radius:12px; font-size:17px; font-weight:bold; width:90%; max-width:400px; display:block; cursor:pointer; text-decoration:none; }
     .btn-laranja { background:#FF6B00; color:white; padding:14px 28px; border:none; border-radius:12px; font-size:16px; font-weight:bold; cursor:pointer; margin:10px; }
-    .btn-insta { background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); color:white; padding:15px; margin:10px auto; border:none; border-radius:12px; font-size:17px; font-weight:bold; width:90%; max-width:400px; display:block; cursor:pointer; text-decoration:none; }
+    .btn-insta { 
+      background:#E1306C; 
+      color:white; 
+      padding:15px; 
+      margin:10px auto; 
+      border:none; 
+      border-radius:12px; 
+      font-size:17px; 
+      font-weight:bold; 
+      width:90%; 
+      max-width:400px; 
+      display:block; 
+      cursor:pointer; 
+      text-decoration:none; 
+    }
   </style>
 </head>
 <body>
@@ -42,15 +55,19 @@
   <h2 style="font-size:24px;">El Shaday Gás - Seu Gás Chega <span style="color:#FF6B00;">em Minutos!</span></h2>
   <p style="padding:0 15px;">Revenda Autorizada Copagaz. Entrega rápida em Maceió e região. Qualidade e peso garantido.</p>
 
-  <!-- MÚSICA -->
-  <audio id="jingle" src="jingle-elshaday.mp3" loop></audio>
-  <div style="margin:20px 0;">
-    <p style="color:#FF6B00; font-weight:bold; font-size:16px;">🎵 Jingle EL SHADAY Maceió/AL 🎵</p>
-    <button onclick="tocarMusica()" id="btnMusica" class="btn-laranja">▶️ Tocar Música</button>
-  </div>
+  <!-- MÚSICA ARRUMADA -->
+  <audio id="jingle" controls style="margin:10px auto; width:90%; max-width:400px;">
+    <source src="jingle-elshaday.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+  <p style="color:#FF6B00; font-weight:bold; font-size:14px; margin:5px 0;">🎵 Jingle EL SHADAY Maceió/AL 🎵</p>
 
   <a href="tel:82996647786" class="btn">📦 DISK GÁS - 82 99664-7786</a>
   <a href="https://wa.me/5582988217147" class="btn">🚚 SEJA UM REVENDEDOR - 82 98821-7147</a>
   <a href="https://wa.me/5582996647786" class="btn">💬 Pedir no WhatsApp</a>
   
-  <!-- BOTÃO INSTAGRAM ATUALIZADO -->
+  <!-- BOTÃO INSTAGRAM -->
+  <a href="https://www.instagram.com/elshadaygasal?igsi=dWUxaDMxaXg3eWsw" target="_blank" class="btn-insta">📸 Siga no Instagram @elshadaygasal</a>
+
+</body>
+</html>
