@@ -6,36 +6,69 @@
   <title>EL SHADAY GÁS - MACEIÓ/AL</title>
   <style>
     body { background:#000; color:white; font-family: Arial; text-align:center; margin:0; padding:0; }
-    .verde { background:#00A859; padding:10px; font-weight:bold; font-size:14px; }
-    .titulo { font-size:42px; font-weight:bold; margin:15px 0 5px 0; } /* AUMENTEI O NOME */
-    .btn { background:#00A859; color:white; padding:14px; margin:8px auto; border:none; border-radius:10px; font-size:16px; font-weight:bold; width:90%; max-width:400px; display:block; cursor:pointer; text-decoration:none; }
-    .btn-laranja { background:#FF6B00; color:white; padding:12px 24px; border:none; border-radius:10px; font-size:15px; font-weight:bold; cursor:pointer; margin:10px; }
-    .btn-insta { background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:white; padding:14px; margin:8px auto; border:none; border-radius:10px; font-size:16px; font-weight:bold; width:90%; max-width:400px; display:block; cursor:pointer; text-decoration:none; }
+    
+    /* EFEITO PISCAR DEVAGAR */
+    .verde { 
+      background:#00A859; 
+      padding:12px; 
+      font-weight:bold; 
+      font-size:15px; 
+    }
+    .piscar {
+      animation: blink 2s infinite; /* 2 SEGUNDOS */
+    }
+    @keyframes blink {
+      0%, 60% { opacity: 1; }
+      61%, 100% { opacity: 0.4; }
+    }
+
+    .titulo { font-size:48px; font-weight:bold; margin:20px 0 5px 0; letter-spacing:2px; }
+    .btn { background:#00A859; color:white; padding:15px; margin:10px auto; border:none; border-radius:12px; font-size:17px; font-weight:bold; width:90%; max-width:400px; display:block; cursor:pointer; text-decoration:none; }
+    .btn-laranja { background:#FF6B00; color:white; padding:14px 28px; border:none; border-radius:12px; font-size:16px; font-weight:bold; cursor:pointer; margin:10px; }
+    .btn-insta { background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); color:white; padding:15px; margin:10px auto; border:none; border-radius:12px; font-size:17px; font-weight:bold; width:90%; max-width:400px; display:block; cursor:pointer; text-decoration:none; }
   </style>
 </head>
 <body>
 
-  <div class="verde">🟢 ONLINE - Aberto agora: Seg a Sáb 07:00 às 18:00</div>
+  <div class="verde">
+    <span class="piscar">🟢 ONLINE</span> - Aberto agora: Seg a Sáb 07:00 às 18:00
+  </div>
 
-  <h1 class="titulo">EL SHADAY</h1> <!-- NOME MAIOR -->
-  <p style="color:#00FF00; margin:0; font-size:18px; font-weight:bold;">GÁS - COPAGAZ</p>
-  <p style="color:#00FF00; margin:5px 0;">● Aberto agora ● Entregando em minutos</p>
-  <p style="margin:5px 0;">● Maceió/AL</p>
+  <h1 class="titulo">EL SHADAY</h1>
+  <p style="color:#00FF00; margin:0; font-size:20px; font-weight:bold;">GÁS - COPAGAZ</p>
+  <p style="color:#00FF00; margin:8px 0; font-size:15px;">● Aberto agora ● Entregando em minutos</p>
+  <p style="margin:8px 0; font-size:16px;">● Maceió/AL</p>
 
-  <h2>El Shaday Gás - Seu Gás Chega <span style="color:#FF6B00;">em Minutos!</span></h2>
-  <p>Revenda Autorizada Copagaz. Entrega rápida em Maceió e região. Qualidade e peso garantido.</p>
+  <h2 style="font-size:24px;">El Shaday Gás - Seu Gás Chega <span style="color:#FF6B00;">em Minutos!</span></h2>
+  <p style="padding:0 15px;">Revenda Autorizada Copagaz. Entrega rápida em Maceió e região. Qualidade e peso garantido.</p>
 
-  <!-- MASCOTE -->
-  <h3 style="color:#FF6B00; margin-bottom:5px;">Oi! Eu sou o Botijão da EL SHADAY 👋</h3>
-  <img src="mascote-copagaz.png" alt="Mascote EL SHADAY" style="width:200px; margin:10px auto; display:block;">
-
-  <!-- MÚSICA COM BOTÃO PRA TOCAR -->
-  <audio id="jingle" src="jingle- El SHADAY GÁS.mp3" loop></audio>
-  <div style="margin:15px 0;">
-    <p style="color:#FF6B00; font-weight:bold;">🎵 Jingle EL SHADAY Maceió/AL 🎵</p>
+  <!-- MÚSICA -->
+  <audio id="jingle" src="jingle-elshaday.mp3" loop></audio>
+  <div style="margin:20px 0;">
+    <p style="color:#FF6B00; font-weight:bold; font-size:16px;">🎵 Jingle EL SHADAY Maceió/AL 🎵</p>
     <button onclick="tocarMusica()" id="btnMusica" class="btn-laranja">▶️ Tocar Música</button>
   </div>
 
   <a href="tel:82996647786" class="btn">📦 DISK GÁS - 82 99664-7786</a>
   <a href="https://wa.me/5582988217147" class="btn">🚚 SEJA UM REVENDEDOR - 82 98821-7147</a>
-  <a href="https://wa.me/5582996647786" class="btn">💬 Pedir no WhatsApp</a
+  <a href="https://wa.me/5582996647786" class="btn">💬 Pedir no WhatsApp</a>
+  
+  <!-- BOTÃO INSTAGRAM -->
+  <a href="https://instagram.com/elshadaygas" target="_blank" class="btn-insta">📸 Siga no Instagram @elshadaygas</a>
+
+  <script>
+    function tocarMusica() {
+      var audio = document.getElementById('jingle');
+      var btn = document.getElementById('btnMusica');
+      if(audio.paused) {
+        audio.play();
+        btn.innerHTML = "🔇 Pausar Música";
+      } else {
+        audio.pause();
+        btn.innerHTML = "▶️ Tocar Música";
+      }
+    }
+  </script>
+
+</body>
+</html>
