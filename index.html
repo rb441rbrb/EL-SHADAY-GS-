@@ -1,72 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EL SHADAY GÁS - MACEIÓ/AL</title>
-  <style>
-    body { background:#000; color:white; font-family: Arial; text-align:center; margin:0; padding:0; }
-    
-    .verde { 
-      background:#00A859; 
-      padding:12px; 
-      font-weight:bold; 
-      font-size:15px; 
-    }
-    .piscar {
-      animation: blink 2s infinite;
-    }
-    @keyframes blink {
-      0%, 60% { opacity: 1; }
-      61%, 100% { opacity: 0.4; }
-    }
-
-    .titulo { font-size:48px; font-weight:bold; margin:20px 0 5px 0; letter-spacing:2px; }
-    .btn { background:#00A859; color:white; padding:15px; margin:10px auto; border:none; border-radius:12px; font-size:17px; font-weight:bold; width:90%; max-width:400px; display:block; cursor:pointer; text-decoration:none; }
-    .btn-laranja { background:#FF6B00; color:white; padding:14px 28px; border:none; border-radius:12px; font-size:16px; font-weight:bold; cursor:pointer; margin:10px; }
-    .btn-insta { 
-      background:#E1306C; 
-      color:white; 
-      padding:15px; 
-      margin:10px auto; 
-      border:none; 
-      border-radius:12px; 
-      font-size:17px; 
-      font-weight:bold; 
-      width:90%; 
-      max-width:400px; 
-      display:block; 
-      cursor:pointer; 
-      text-decoration:none; 
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EL SHADAY GÁS - Maceió/AL</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#000;color:white;text-align:center}
+.top{background:#00A859;padding:10px;font-weight:bold;font-size:14px}
+h1{font-size:42px;margin-top:22px;letter-spacing:3px;font-weight:900}
+.btn{background:#00A859;color:white;padding:16px;margin:10px auto;border:none;border-radius:12px;font-size:15px;font-weight:bold;width:92%;max-width:400px;display:block;cursor:pointer;text-decoration:none}
+.btn-insta{background:#E1306C}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:9999;justify-content:center;align-items:center;padding:15px}
+.modal-box{background:white;color:#111;border-radius:20px;padding:22px;max-width:390px;width:100%;text-align:center}
+.pix-key{background:#f0fdf4;border:2px dashed #00A859;padding:10px;border-radius:10px;margin:12px 0;word-break:break-all;font-size:10px;text-align:left}
+.btn-pix{background:#00A859;color:white;padding:15px;border:none;border-radius:10px;width:100%;font-weight:bold;margin:6px 0;cursor:pointer}
+.btn-zap{background:#25D366;color:white;padding:15px;border:none;border-radius:10px;width:100%;font-weight:bold;margin:6px 0;cursor:pointer}
+</style>
 </head>
 <body>
-
-  <div class="verde">
-    <span class="piscar">🟢 ONLINE</span> - Aberto agora: Seg a Sáb 07:00 às 18:00
-  </div>
-
-  <h1 class="titulo">EL SHADAY</h1>
-  <p style="color:#00FF00; margin:0; font-size:20px; font-weight:bold;">GÁS - COPAGAZ</p>
-  <p style="color:#00FF00; margin:8px 0; font-size:15px;">● Aberto agora ● Entregando em minutos</p>
-  <p style="margin:8px 0; font-size:16px;">● Maceió/AL</p>
-
-  <h2 style="font-size:24px;">El Shaday Gás - Seu Gás Chega <span style="color:#FF6B00;">em Minutos!</span></h2>
-  <p style="padding:0 15px;">Revenda Autorizada Copagaz. Entrega rápida em Maceió e região. Qualidade e peso garantido.</p>
-
-  <!-- MÚSICA ARRUMADA -->
-  <audio id="jingle" controls style="margin:10px auto; width:90%; max-width:400px;">
-      <source src="jingle.mp3" type="audio/mpeg">
-    Seu navegador não suporta áudio.
-  </audio>
-
-  <a href="tel:82996647786" class="btn">📦 DISK GÁS - 82 99664-7786</a>
-  <a href="https://wa.me/5582988217147" class="btn">🚚 SEJA UM REVENDEDOR - 82 98821-7147</a>
-  <a href="https://wa.me/5582996647786" class="btn">💬 Pedir no WhatsApp</a>
-  
-  <!-- BOTÃO INSTAGRAM -->
-  <a href="https://www.instagram.com/elshadaygasal?igsi=dWUxaDMxaXg3eWsw" target="_blank" class="btn-insta">📸 Siga no Instagram @elshadaygasal</a>
-
+<div class="top">🟢 ONLINE - Aberto agora: Seg a Sáb 07:00 às 18:00</div>
+<h1>EL SHADAY</h1>
+<p style="color:#00FF00;font-weight:bold;font-size:19px">GÁS - COPAGAZ</p>
+<p style="color:#00FF00;margin:8px 0 4px;font-size:14px">● Aberto agora ● Entregando em minutos</p>
+<p style="font-size:14px">● Maceió/AL</p>
+<h2 style="margin:22px 15px;font-size:22px">El Shaday Gás - Seu Gás Chega <span style="color:#FF6B00">em Minutos!</span></h2>
+<p style="padding:0 22px;color:#ccc;font-size:14px">Revenda Autorizada Copagaz. Entrega rápida em Maceió e região. Qualidade e peso garantido.</p>
+<audio controls style="margin:22px auto;display:block;width:92%;max-width:400px"><source src="jingle-elshaday.mp3" type="audio/mpeg"></audio>
+<a href="tel:82996647786" class="btn">📦 DISK GÁS - 82 99664-7786</a>
+<a href="https://wa.me/5582988217147" class="btn">🚚 SEJA UM REVENDEDOR - 82 98821-7147</a>
+<button onclick="abrirPix()" class="btn">💬 Pedir no WhatsApp</button>
+<a href="https://www.instagram.com/elshadaygasal" target="_blank" class="btn btn-insta">📸 Siga no Instagram @elshadaygasal</a>
+<div id="modalPix" class="modal" onclick="if(event.target==this) fecharPix()">
+<div class="modal-box">
+<h2 style="color:#00A859">💰 Pague seu Gás R$110</h2>
+<p style="font-size:28px;color:#00A859;font-weight:900">R$ 110,00</p>
+<div style="background:#fff3cd;padding:8px;border-radius:8px;margin:10px 0;font-size:11px">🔑 Chave PIX Aleatória<br><b>82999962042</b><br>82 99996-2042</div>
+<div class="pix-key">00020126330014BR.GOV.BCB.PIX0111829999620425204000053039865406110.005802BR5913EL SHADAY GAS6006MACEIO62070503***630459CF</div>
+<button class="btn-pix" onclick="copiarPix()">📋 COPIAR PIX R$110,00</button>
+<button class="btn-zap" onclick="irZap()">✅ JÁ PAGUEI - CHAMAR NO ZAP</button>
+<button onclick="fecharPix()" style="background:none;border:none;color:#999;margin-top:12px">Fechar</button>
+</div>
+</div>
+<script>
+const PIX = "00020126330014BR.GOV.BCB.PIX0111829999620425204000053039865406110.005802BR5913EL SHADAY GAS6006MACEIO62070503***630459CF";
+function abrirPix(){document.getElementById('modalPix').style.display='flex';}
+function fecharPix(){document.getElementById('modalPix').style.display='none';}
+function copiarPix(){navigator.clipboard.writeText(PIX); alert('PIX R$110 copiado! Chave: 82999962042');}
+function irZap(){let msg=encodeURIComponent("Olá EL SHADAY! Fiz o PIX de R$110,00 da chave 82999962042. Endereço: "); window.open("https://wa.me/55829999962042?text="+msg,"_blank");}
+</script>
 </body>
 </html>
