@@ -8,10 +8,12 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{background:#000;color:#fff;text-align:center}
 .top{padding:12px;font-weight:bold;font-size:14px}
-h1{font-size:42px;margin-top:20px;letter-spacing:3px;font-weight:900}
+h1{font-size:42px;margin-top:10px;letter-spacing:3px;font-weight:900}
 .btn{background:#00A859;color:white;padding:16px;margin:10px auto;border:none;border-radius:12px;font-size:16px;font-weight:bold;width:92%;max-width:400px;display:block;text-decoration:none;cursor:pointer}
 .btn-zap{background:#25D366}
 .btn-insta{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}
+.btn-musica{background:#FF6B00;animation:pulse 1.5s infinite}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
 </style>
 </head>
 <body>
@@ -21,6 +23,13 @@ h1{font-size:42px;margin-top:20px;letter-spacing:3px;font-weight:900}
 <h1>EL SHADAY</h1>
 <p style="color:#00FF00;font-weight:bold;font-size:20px">GÁS - COPAGAZ</p>
 <p style="margin-top:8px">Maceió/AL - Entregando em minutos</p>
+
+<!-- SEU JINGLE -->
+<button id="btnMusica" onclick="tocarMusica()" class="btn btn-musica">🔊 Tocar Jingle EL SHADAY</button>
+<audio id="player" loop preload="auto">
+  <source src="jingle.mp3" type="audio/mpeg">
+</audio>
+
 <h2 style="margin:20px">Seu Gás Chega <span style="color:#FF6B00">em Minutos!</span></h2>
 
 <a href="tel:+5582996647786" class="btn">📦 DISK GÁS - 82 99664-7786</a>
@@ -29,29 +38,39 @@ h1{font-size:42px;margin-top:20px;letter-spacing:3px;font-weight:900}
 <a href="https://www.instagram.com/elshadaygasal" target="_blank" class="btn btn-insta">📸 Instagram @elshadaygasal</a>
 
 <script>
+let tocando = false;
+function tocarMusica(){
+  let audio = document.getElementById('player');
+  let btn = document.getElementById('btnMusica');
+  if(!tocando){
+    audio.play();
+    btn.innerHTML = "🔇 Pausar Jingle";
+    btn.style.background = "#333";
+    tocando = true;
+  } else {
+    audio.pause();
+    btn.innerHTML = "🔊 Tocar Jingle EL SHADAY";
+    btn.style.background = "#FF6B00";
+    tocando = false;
+  }
+}
 function atualizaStatus(){
   let agora = new Date();
-  let dia = agora.getDay(); // 0=Domingo, 6=Sábado
+  let dia = agora.getDay();
   let hora = agora.getHours();
   let div = document.getElementById('statusTop');
   let aberto = false;
-  
-  if(dia >= 1 && dia <= 5){ // Segunda a Sexta
-    if(hora >= 7 && hora < 18) aberto = true;
-  } else if(dia == 6){ // Sábado
-    if(hora >= 7 && hora < 14) aberto = true;
-  }
-  
+  if(dia >= 1 && dia <= 5){ if(hora >= 7 && hora < 18) aberto = true; }
+  else if(dia == 6){ if(hora >= 7 && hora < 14) aberto = true; }
   if(aberto){
     div.innerHTML = "🟢 ONLINE - Aberto agora: Seg-Sex 07h-18h | Sáb 07h-14h";
     div.style.background = "#00A859";
   } else {
-    div.innerHTML = dia==0 ? "🔴 OFFLINE - Domingo Fechado - Voltamos Segunda 07:00" : "🔴 OFFLINE - Fechado - Voltamos às 07:00";
+    div.innerHTML = dia==0 ? "🔴 OFFLINE - Domingo Fechado" : "🔴 OFFLINE - Voltamos às 07:00";
     div.style.background = "#cc0000";
   }
 }
 atualizaStatus();
-setInterval(atualizaStatus, 60000);
 </script>
 </body>
 </html>
