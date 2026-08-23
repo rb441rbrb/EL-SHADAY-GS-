@@ -29,7 +29,7 @@ h1{font-size:42px;margin-top:22px;letter-spacing:3px;font-weight:900}
 <audio controls style="margin:22px auto;display:block;width:92%;max-width:400px"><source src="jingle-elshaday.mp3" type="audio/mpeg"></audio>
 
 <a href="tel:82996647786" class="btn">📦 DISK GÁS - 82 99664-7786</a>
-<a href="https://wa.me/5582988217147?text=Quero ser revendedor EL SHADAY" class="btn">🚚 SEJA UM REVENDEDOR</a>
+<a href="https://wa.me/5582988217147" class="btn">🚚 SEJA UM REVENDEDOR</a>
 <button onclick="abrirPix()" class="btn">💬 Pedir no WhatsApp</button>
 <a href="https://www.instagram.com/elshadaygasal" target="_blank" class="btn btn-insta">📸 Siga no Instagram @elshadaygasal</a>
 
@@ -50,7 +50,10 @@ const PIX = "00020126580014BR.GOV.BCB.PIX01367f3a9c1e-8b2d-4e6f-9a0b-c1d2e3f4a5b
 function abrirPix(){document.getElementById('modalPix').style.display='flex';}
 function fecharPix(){document.getElementById('modalPix').style.display='none';}
 function copiarPix(){navigator.clipboard.writeText(PIX); alert('✅ PIX ALEATÓRIO R$110 copiado!');}
-function irZap(){let msg=encodeURIComponent("Olá EL SHADAY! Fiz o PIX de R$110,00. "); window.open("https://wa.me/55829999962042?text="+msg,"_blank");}
+function irZap(){
+  let msg=encodeURIComponent("Olá EL SHADAY! Já fiz o pagamento do GÁS de R$110,00 via PIX! ✅ Meu endereço é: ");
+  window.open("https://wa.me/5582996647786?text="+msg,"_blank");
+}
 </script>
 </body>
 </html>
