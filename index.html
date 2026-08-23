@@ -27,27 +27,30 @@ h1{font-size:42px;margin-top:22px;letter-spacing:3px;font-weight:900}
 <h2 style="margin:22px 15px;font-size:22px">El Shaday Gás - Seu Gás Chega <span style="color:#FF6B00">em Minutos!</span></h2>
 <p style="padding:0 22px;color:#ccc;font-size:14px">Revenda Autorizada Copagaz. Entrega rápida em Maceió e região. Qualidade e peso garantido.</p>
 <audio controls style="margin:22px auto;display:block;width:92%;max-width:400px"><source src="jingle-elshaday.mp3" type="audio/mpeg"></audio>
+
 <a href="tel:82996647786" class="btn">📦 DISK GÁS - 82 99664-7786</a>
-<a href="https://wa.me/5582988217147" class="btn">🚚 SEJA UM REVENDEDOR - 82 98821-7147</a>
+<a href="https://wa.me/5582988217147?text=Quero ser revendedor EL SHADAY" class="btn">🚚 SEJA UM REVENDEDOR</a>
 <button onclick="abrirPix()" class="btn">💬 Pedir no WhatsApp</button>
 <a href="https://www.instagram.com/elshadaygasal" target="_blank" class="btn btn-insta">📸 Siga no Instagram @elshadaygasal</a>
+
 <div id="modalPix" class="modal" onclick="if(event.target==this) fecharPix()">
 <div class="modal-box">
 <h2 style="color:#00A859">💰 Pague seu Gás R$110</h2>
 <p style="font-size:28px;color:#00A859;font-weight:900">R$ 110,00</p>
-<div style="background:#fff3cd;padding:8px;border-radius:8px;margin:10px 0;font-size:11px">🔑 Chave PIX Aleatória<br><b>82999962042</b><br>82 99996-2042</div>
-<div class="pix-key">00020126330014BR.GOV.BCB.PIX0111829999620425204000053039865406110.005802BR5913EL SHADAY GAS6006MACEIO62070503***630459CF</div>
+<div style="background:#e6f7ff;padding:10px;border-radius:8px;margin:10px 0;font-size:11px;border:1px solid #91d5ff">🔑 <b>Chave PIX Aleatória</b><br><b style="font-size:9px;word-break:break-all">7f3a9c1e-8b2d-4e6f-9a0b-c1d2e3f4a5b6</b></div>
+<div class="pix-key">00020126580014BR.GOV.BCB.PIX01367f3a9c1e-8b2d-4e6f-9a0b-c1d2e3f4a5b65204000053039865406110.005802BR5913EL SHADAY GAS6006MACEIO62070503***6304567B</div>
 <button class="btn-pix" onclick="copiarPix()">📋 COPIAR PIX R$110,00</button>
 <button class="btn-zap" onclick="irZap()">✅ JÁ PAGUEI - CHAMAR NO ZAP</button>
 <button onclick="fecharPix()" style="background:none;border:none;color:#999;margin-top:12px">Fechar</button>
 </div>
 </div>
+
 <script>
-const PIX = "00020126330014BR.GOV.BCB.PIX0111829999620425204000053039865406110.005802BR5913EL SHADAY GAS6006MACEIO62070503***630459CF";
+const PIX = "00020126580014BR.GOV.BCB.PIX01367f3a9c1e-8b2d-4e6f-9a0b-c1d2e3f4a5b65204000053039865406110.005802BR5913EL SHADAY GAS6006MACEIO62070503***6304567B";
 function abrirPix(){document.getElementById('modalPix').style.display='flex';}
 function fecharPix(){document.getElementById('modalPix').style.display='none';}
-function copiarPix(){navigator.clipboard.writeText(PIX); alert('PIX R$110 copiado! Chave: 82999962042');}
-function irZap(){let msg=encodeURIComponent("Olá EL SHADAY! Fiz o PIX de R$110,00 da chave 82999962042. Endereço: "); window.open("https://wa.me/55829999962042?text="+msg,"_blank");}
+function copiarPix(){navigator.clipboard.writeText(PIX); alert('✅ PIX ALEATÓRIO R$110 copiado!');}
+function irZap(){let msg=encodeURIComponent("Olá EL SHADAY! Fiz o PIX de R$110,00. "); window.open("https://wa.me/55829999962042?text="+msg,"_blank");}
 </script>
 </body>
 </html>
