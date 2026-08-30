@@ -15,7 +15,6 @@ h2{margin:20px}
 .btn-verde{background:#00A859}
 .btn-insta{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}
 .btn-musica{background:#FF6B00}
-
 @keyframes piscaBotao{
 0%{transform:scale(1); filter:brightness(1)}
 50%{transform:scale(1.06); filter:brightness(1.3)}
@@ -32,7 +31,9 @@ h2{margin:20px}
 <p style="margin-top:8px">Maceió/AL - Entregando em minutos</p>
 
 <button id="btnMusica" onclick="tocarMusica()" class="btn btn-musica">🔊 Tocar Jingle EL SHADAY</button>
-<audio id="player" loop preload="auto">
+
+<audio id="player" loop preload="auto" autoplay playsinline>
+  <source src="jingle.mp3" type="audio/ogg">
   <source src="jingle.mp3" type="audio/mpeg">
 </audio>
 
@@ -45,12 +46,31 @@ h2{margin:20px}
 
 <script>
 let tocando=false;
+let player=document.getElementById('player');
+let btn=document.getElementById('btnMusica');
+
 function tocarMusica(){
-  let a=document.getElementById('player');
-  let b=document.getElementById('btnMusica');
-  if(!tocando){a.play();b.innerHTML="🔇 Pausar Jingle";tocando=true}
-  else{a.pause();b.innerHTML="🔊 Tocar Jingle EL SHADAY";tocando=false}
+  if(!tocando){player.play().then(()=>{btn.innerHTML="🔇 Pausar Jingle";tocando=true});}
+  else{player.pause();btn.innerHTML="🔊 Tocar Jingle EL SHADAY";tocando=false}
 }
+
+// FORÇA TOCAR SOZINHO QUANDO ENTRA NO SITE
+window.addEventListener('load', ()=>{
+  player.volume=1;
+  // tenta 3 vezes
+  setTimeout(()=>{ player.play().then(()=>{tocando=true;btn.innerHTML="🔇 Pausar Jingle";}).catch(()=>{}); }, 300);
+  setTimeout(()=>{ player.play().then(()=>{tocando=true;btn.innerHTML="🔇 Pausar Jingle";}).catch(()=>{}); }, 1000);
+  setTimeout(()=>{ player.play().then(()=>{tocando=true;btn.innerHTML="🔇 Pausar Jingle";}).catch(()=>{}); }, 2000);
+});
+
+// Se o Chrome bloquear, toca no primeiro toque em qualquer lugar da tela
+document.body.addEventListener('click', ()=>{
+  if(!tocando){ player.play().then(()=>{tocando=true;btn.innerHTML="🔇 Pausar Jingle";}); }
+}, {once:true});
+document.body.addEventListener('touchstart', ()=>{
+  if(!tocando){ player.play().then(()=>{tocando=true;btn.innerHTML="🔇 Pausar Jingle";}); }
+}, {once:true});
+
 function atualizaStatus(){
   let agora=new Date(); let dia=agora.getDay(); let hora=agora.getHours();
   let div=document.getElementById('statusTop'); let aberto=false;
