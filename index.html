@@ -34,7 +34,6 @@ h2{margin:20px}
 
 <audio id="player" loop preload="auto" autoplay playsinline>
   <source src="jingle.mp3" type="audio/ogg">
-  <source src="jingle.mp3" type="audio/mpeg">
 </audio>
 
 <h2>Seu Gás Chega <span style="color:#FF6B00">em Minutos!</span></h2>
@@ -54,22 +53,15 @@ function tocarMusica(){
   else{player.pause();btn.innerHTML="🔊 Tocar Jingle EL SHADAY";tocando=false}
 }
 
-// FORÇA TOCAR SOZINHO QUANDO ENTRA NO SITE
 window.addEventListener('load', ()=>{
   player.volume=1;
-  // tenta 3 vezes
-  setTimeout(()=>{ player.play().then(()=>{tocando=true;btn.innerHTML="🔇 Pausar Jingle";}).catch(()=>{}); }, 300);
-  setTimeout(()=>{ player.play().then(()=>{tocando=true;btn.innerHTML="🔇 Pausar Jingle";}).catch(()=>{}); }, 1000);
-  setTimeout(()=>{ player.play().then(()=>{tocando=true;btn.innerHTML="🔇 Pausar Jingle";}).catch(()=>{}); }, 2000);
+  setTimeout(()=>{ player.play().then(()=>{tocando=true;btn.innerHTML="🔇 Pausar Jingle";}).catch(()=>{}); }, 500);
+  setTimeout(()=>{ player.play().then(()=>{tocando=true;btn.innerHTML="🔇 Pausar Jingle";}).catch(()=>{}); }, 1500);
 });
 
-// Se o Chrome bloquear, toca no primeiro toque em qualquer lugar da tela
-document.body.addEventListener('click', ()=>{
-  if(!tocando){ player.play().then(()=>{tocando=true;btn.innerHTML="🔇 Pausar Jingle";}); }
-}, {once:true});
-document.body.addEventListener('touchstart', ()=>{
-  if(!tocando){ player.play().then(()=>{tocando=true;btn.innerHTML="🔇 Pausar Jingle";}); }
-}, {once:true});
+// Se o navegador bloquear, toca no primeiro toque
+document.addEventListener('click', ()=>{ if(!tocando) tocarMusica(); }, {once:true});
+document.addEventListener('touchstart', ()=>{ if(!tocando) tocarMusica(); }, {once:true});
 
 function atualizaStatus(){
   let agora=new Date(); let dia=agora.getDay(); let hora=agora.getHours();
